@@ -72,7 +72,6 @@ func main() {
 
 	for _, res := range c {
 		fmt.Printf("To feed a %s, you need %.3f kilograms of food per month.\n", res.String(), res.getFoodForWeight())
-
 		countOllFarmFood += res.getFoodForWeight()
 		countOllAnimals++
 	}
