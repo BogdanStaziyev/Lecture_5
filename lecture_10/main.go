@@ -45,11 +45,11 @@ func (c cow) getFoodForWeight() float64 {
 }
 
 type animals interface {
-	nedEatForOneAnimal
+	nedEatForOneAnimalGetter
 	fmt.Stringer
 }
 
-type nedEatForOneAnimal interface {
+type nedEatForOneAnimalGetter interface {
 	getFoodForWeight() float64
 }
 
