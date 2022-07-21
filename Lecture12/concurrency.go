@@ -5,8 +5,6 @@ import (
 	"sync"
 )
 
-var count int
-
 func main() {
 	var wg sync.WaitGroup
 
@@ -17,19 +15,19 @@ func main() {
 	}
 
 	wg.Add(len(n))
-	for _, val := range n {
+	for ind, val := range n {
 		value := val
+		count := ind + 1
 		go func() {
-			sum(value)
+			sum(count, value)
 			defer wg.Done()
 		}()
 	}
 	wg.Wait()
 }
 
-func sum(sls []int) {
+func sum(count int, sls []int) {
 	var sumOfSlice int
-	count++
 
 	for _, num := range sls {
 		sumOfSlice += num
