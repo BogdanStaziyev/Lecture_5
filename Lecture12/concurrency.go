@@ -21,7 +21,7 @@ func main() {
 		value := val
 		go func() {
 			sum(value)
-			wg.Done()
+			defer wg.Done()
 		}()
 	}
 	wg.Wait()
