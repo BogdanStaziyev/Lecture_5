@@ -16,7 +16,7 @@ func main() {
 		{4, 2, 8, 35},
 	}
 
-	ch := make(chan int)
+	ch := make(chan int, len(n))
 	var sum int
 
 	for _, val := range n {
