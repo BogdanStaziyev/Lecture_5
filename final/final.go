@@ -20,9 +20,9 @@ func main() {
 	var sum int
 
 	for _, val := range n {
-		go func() {
-			sumOfValues(val, ch)
-		}()
+		go sumOfValues(val, ch)
+	}
+	for i := 0; i < len(n); i++ {
 		sum += <-ch
 	}
 	close(ch)
