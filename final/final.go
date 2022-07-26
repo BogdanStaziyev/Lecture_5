@@ -27,7 +27,6 @@ func main() {
 	}
 	close(ch)
 	fmt.Println("result:", sum)
-	//мені здається що реалізація невірна)) але через брак досвіду не можу висловити проблему
 }
 
 func sumOfValues(sls []int, ch chan int) {
